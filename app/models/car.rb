@@ -2,6 +2,7 @@ class Car < ApplicationRecord
   CATEGORIES = ["BWM", "VW", "Tesla", "Mercedes Benz", "Toyota", "Hyundai", "BYD"]
   belongs_to :user
   has_many :bookings
+  #has_one_attached :photo => Cloudinary implementation
 
   validates :category, presence: true, inclusion; { in: CATEGORIES }
   validates :model, :brand, :location, presence: true

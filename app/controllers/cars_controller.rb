@@ -24,7 +24,7 @@ class CarsController < ApplicationController
 
     private
     def car_params
-        params.require(:car).permit(:brand, :model, :price_per_day, :description, :category, :user_id, :location, :longitude, :latitude)
+        params.require(:car).permit(:brand, :model, :price_per_day, :description, :category, :user_id, :location, :longitude, :latitude) #:photo for Cloudinary
     end
 
 end
