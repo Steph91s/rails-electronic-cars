@@ -2,6 +2,7 @@ class Car < ApplicationRecord
   BRAND = ["BMW", "VW", "Tesla", "Mercedes Benz", "Toyota", "Hyundai", "BYD"]
   belongs_to :user
   has_many :bookings
+
   has_one_attached :photo
 
   validates :brand, presence: true, inclusion: { in: BRAND }
