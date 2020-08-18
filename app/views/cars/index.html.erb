@@ -1,0 +1,69 @@
+<div class="results-wrapper">
+
+
+  <div class="main-results-container">
+    <div class="results-container text-center">
+
+      <h3>Choose among amazing electric cars</h3>
+      <div class="filters-bar text-center">
+        <%#= render "shared/form_index" %>
+        <div class="categories-container">
+          <div class="category-item tag compact">
+            <%= image_tag "logo.png", class: "img-icon" %>
+            <h5>Compact city</h5>
+          </div>
+          <div class="category-item tag family">
+            <%= image_tag "logo.png", class: "img-icon" %>
+            <h5>Family car</h5>
+          </div>
+          <div class="category-item tag sport">
+            <%= image_tag "logo.png", class: "img-icon" %>
+            <h5>Sports car</h5>
+          </div>
+          <div class="category-item tag all-rounder">
+            <%= image_tag "logo.png", class: "img-icon" %>
+            <h5>All-rounder</h5>
+          </div>
+        </div>
+      </div>
+      <p class="text-left"><%= @cars.length < 2 ? "#{ @cars.length } result" : "#{ @cars.length } results" %></p>
+
+      <div class="results-cards">
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+          Rio
+        </div>
+  
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/berlin)">
+          Berlin
+        </div>
+  
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/shanghai)">
+          Shanghai
+        </div>
+  
+        <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/barcelona)">
+          Barcelona
+        </div>
+        
+        <!-- <% @cars.each do |car| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= link_to car_path(@search_params.merge(id: car.id)) do %>
+          <div class="results-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path car.photo, height: 300, width: 400, crop: :fill if car.photo.present? %>');">
+          </div>
+          <div class="results-detail">
+            <h4><%= car.title %></h4>
+            <p><span class="light-words">from </span><%= car.price_per_day %>€/night</p>
+          </div>
+          <% end %>
+        </div>
+        <% end %> -->
+      </div>
+
+    </div>
+
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoic3RlcGg5MXMiLCJhIjoiY2tkYTVvNzAxMGVyYzJxcnhmcmtiaGFlYiJ9.LO5xB_PwOWrrhzmAF72esQ'>   
+
+
+  </div>
+
+</div>
