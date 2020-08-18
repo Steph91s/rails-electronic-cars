@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
     before_action :set_car, only: [ :show ]
-    
+
     def index
         @cars = policy_scope(Car).order(created_at: :desc)
     end
@@ -27,7 +27,7 @@ class CarsController < ApplicationController
 
     private
     def car_params
-        params.require(:car).permit(:brand, :model, :price_per_day, :description, :category, :user_id, :location) #:photo for Cloudinary.  :longitude, :latitude => for Geocode
+        params.require(:car).permit(:brand, :model, :photo, :price_per_day, :description, :category, :user_id, :location) #:photo for Cloudinary.  :longitude, :latitude => for Geocode
     end
 
     def set_car
