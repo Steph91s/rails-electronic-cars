@@ -1,7 +1,22 @@
 class BookingsController < ApplicationController
+    def index
+        @bookings = policy_scope(Booking).order(created_at: :desc)
+    end
+    
+    def new
+        @booking = Booking.new
+        authorize @booking
+    end
+
+    def show
+        @booking = Booking.find(params[:id])
+        @car = Car.new
+    end
     def create
         @car = Car.find(params[:car_id])
         @booking = Booking.new(booking_params)
+        @booking.user = current_user
+        authorize @booking
         if @booking.save
             redirect_to car_path(@car), notice: "New booking successfully created."
         else
