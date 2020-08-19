@@ -1,3 +1,11 @@
+#map {
+  flex: 0 0 500px;
+  width: 100%;
+  position: sticky !important;
+  top: 0 !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 13px rgba(255, 255, 255, 1);
+}
+
 .mapboxgl-popup {
     max-width: 200px;
   }

@@ -38,25 +38,21 @@
         <% @cars.each do |car| %>
           <div class="card">
             <%= image_tag car.photo, crop: :cover %>
+            <h2><%= car.brand %></h2>
             <div class="results-detail">
               <div>
-                <h2><%= car.brand %></h2>
                 <p><%= car.model %></p>
               </div>
-              <div><p><span class="light-words">from </span><%= car.price_per_day %>€/day</p></div>
+              <div><p><span class="light-words"></span><%= car.price_per_day %>€/day</p></div>
             </div>
           </div>
         <% end %>         
       </div>
     </div>
-  </div>
-</div>
-
-<%= link_to 'New car', new_car_path %>
-<br>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
+    <div id="map"
+     style="width: 475px; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
