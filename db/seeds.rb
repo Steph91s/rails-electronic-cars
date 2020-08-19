@@ -77,7 +77,7 @@ cars.each do |car|
     number_of_seat: car[:number_of_seat],
     category: car[:category],
     user: users.sample)
-  c.image.attach(io:URI.open(car[:photo]), filename: "file.jpg")
+  c.photo.attach(io:URI.open(car[:photo]), filename: "file.jpg")
   c.save
 end
 
