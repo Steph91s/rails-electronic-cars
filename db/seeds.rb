@@ -25,9 +25,6 @@ locations = ["Unter den Linden 7, 10117 Berlin", "Spreeweg 1, 10557 Berlin", "Pa
 
 cars = [
   {
-    photo: "https://cdn1.carbuyer.co.uk/sites/carbuyer_d7/files/car_images/bmwi3cutout2019.jpg", brand: "BMW", model: "i3", description: "Smooth and compact city car", price_per_day: 30, number_of_seat: 4, category: "compact city"
-  },
-  {
     photo: "https://www.autozeitung.de/assets/styles/article_image/public/field/image/bmw-i8-facelift-2018-7.jpg?itok=B5nFDOm4", brand: "BMW", model: "i8", description: "Sports car built to thrill", price_per_day: 60, number_of_seat: 2, category: "sports car"
   },
   {

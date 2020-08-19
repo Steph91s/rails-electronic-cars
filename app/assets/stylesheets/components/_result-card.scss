@@ -7,25 +7,26 @@
 }
 
 .card {
-  background-size: cover;
-  background-position: center;
-  height: 150px;
+  overflow: hidden;
+  height: 15em;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   font-size: 22px;
   color: white;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
-  
+}
+
+.card > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
 
 .results-picture {
-  height: 175px;
-  background-size: cover !important;
-  background-position: center;
+  height: 375px;
+  width: 100%;
+  object-fit: cover;
   position: relative;
   border-radius: 1px;
   margin: 5px 5px 0 5px;
@@ -35,9 +36,21 @@
   height: 80px;
   position: relative;
   border-radius: 1px;
-  margin: 0px 5px 20px 5px;
-  border: 1px solid rgba(230,230,230,0.9);
-  background-color: rgba(250, 250, 250, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.results-detail h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.results-detail p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
 }
 
 .results-detail > h4 {
