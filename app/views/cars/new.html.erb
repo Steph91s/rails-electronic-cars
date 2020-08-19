@@ -1,12 +1,18 @@
-<h1>New car</h1>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-4 col-md-offset-4">
+            <h1 class="text-center">Offer your e-car</h1>
 
-<% if policy(Car).create? %>
-    <%= link_to "New car", new_car_path %>
-<% end %>
+            <% if policy(Car).create? %>
+                <%= link_to "New car", new_car_path %>
+            <% end %>
 
-<%= simple_form_for @car do |f| %>
-    <%= f.input :brand %>
-    <%= f.input :model %>
-    <%= f.input :location %>
-    <%= f.submit %>
-<% end %>
+            <%= simple_form_for @car do |f| %>
+                <%= f.input :brand %>
+                <%= f.input :model %>
+                <%= f.input :location %>
+                <%= f.button :submit, "Create new car", class: "btn btn-success form-control" %>
+            <% end %>
+        </div>
+    </div>
+</div>
