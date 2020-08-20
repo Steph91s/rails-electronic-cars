@@ -24,6 +24,14 @@ class BookingsController < ApplicationController
         end
     end
 
+    def validate
+        booking = Booking.find(params[:id])
+        authorize booking
+        booking.confirmed = params[:status] == "accepted" ? true : false
+        booking.save
+        redirect_to bookings_path
+    end
+
     private
     def booking_params
         params.require(:booking).permit(:check_in_date, :check_out_date, :number_of_guest, :confirmed, :user_id)
