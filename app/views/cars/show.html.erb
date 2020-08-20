@@ -1,0 +1,41 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @car.photo.key %>')"></div>
+
+
+<div class="main-container">
+
+  <div class="car-details">
+
+    <h1>Car Details:</h1>
+    <br>
+
+    <h3 class = "border"> Brand: <%= @car.brand %></h3>
+    <h3 class = "border"> Model: <%= @car.model %></h3>
+
+    <h3 class = "border">Description:</h3>
+    <%= @car.description %>
+
+    <h3 class = "border">Category:</h3>
+    <%= @car.category %>
+
+    <h3 class = "border">Number of Seats: <%= @car.number_of_seat %></h3>
+
+    <h3 class = "border">Price per day: €<%= @car.price_per_day %></h3>
+
+
+  </div>
+
+
+
+  <div class="booking-request">
+
+    <h1>Booking:</h1>
+    <%= form_tag bookings_path, method: :get, class: 'form-inline' do %>
+      <%= date_field 'cars[check_in_date]', nil, class: "form-control datepicker text-center date-input", placeholder: "Starting Line" %>
+      <%= date_field 'cars[check_out_date]', nil, class: "form-control datepicker text-center date-input", placeholder: "Finish Line" %>
+      <%= select_tag 'cars[number_of_guest]', options_for_select([['1'], ['2'], ['3'], ['4']]), class: "form-control text-center unselected", id: 'guest', prompt: "Guests" %>
+      <%= submit_tag "Book", class: "btn btn-info search" %>
+    <% end %>
+
+  </div>
+</div>
