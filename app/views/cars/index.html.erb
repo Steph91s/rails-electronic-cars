@@ -40,6 +40,7 @@
             <% if car.photo.attached? %>
               <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
             <% end %>
+            <%= link_to "Show details >>", car, class: "show-details"%>
             <h2><%= car.brand %></h2>
             <div class="results-detail">
               <div>

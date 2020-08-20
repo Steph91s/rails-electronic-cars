@@ -30,7 +30,7 @@
   <div class="booking-request">
 
     <h1>Booking:</h1>
-    <%= form_tag bookings_path, method: :get, class: 'form-inline' do %>
+    <%= form_tag bookings_path, method: :post, class: 'form-inline' do %>
       <%= date_field 'cars[check_in_date]', nil, class: "form-control datepicker text-center date-input", placeholder: "Starting Line" %>
       <%= date_field 'cars[check_out_date]', nil, class: "form-control datepicker text-center date-input", placeholder: "Finish Line" %>
       <%= select_tag 'cars[number_of_guest]', options_for_select([['1'], ['2'], ['3'], ['4']]), class: "form-control text-center unselected", id: 'guest', prompt: "Guests" %>
