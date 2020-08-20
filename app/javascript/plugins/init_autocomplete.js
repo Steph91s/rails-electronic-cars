@@ -1,9 +1,12 @@
-import places from 'places.js';
-
 const initAutocomplete = () => {
-  const locationInput = document.getElementById('location');
+  const locationInput = document.getElementById('car-location');
   if (locationInput) {
-    places({ container: locationInput });
+    const places = require('places.js');
+    const placesAutocomplete = places({
+      appId: 'plPSK1QHWYQ8',
+      apiKey: '3bbb74fad2eceb04f8af13ffc7514744',
+      container: locationInput
+    });
   }
 };
 
