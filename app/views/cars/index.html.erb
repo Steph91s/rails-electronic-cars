@@ -38,6 +38,7 @@
         <% @cars.each do |car| %>
           <div class="card">
             <%= image_tag car.photo, crop: :cover %>
+            <%= link_to "Show details >>", car, class: "show-details"%>
             <h2><%= car.brand %></h2>
             <div class="results-detail">
               <div>
