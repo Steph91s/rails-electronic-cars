@@ -1,0 +1,75 @@
+.banner {
+  height: 700px;
+  justify-content: space-evenly;
+  background-position: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  padding: 15px;
+}
+
+.border {
+  border: 0 0 2px 0 black !important;
+  box-shadow: 1px 1px 1px grey;
+}
+
+.car-details {
+  text-align: left;
+  width: 600px;
+  padding: 40px;
+}
+
+.booking-request {
+  text-align: center;
+  justify-content: center;
+  height: 250px;
+  padding: 40px;
+  margin: 30px;
+  background-color: white;
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888;
+}
+
+
+.form-show-button {
+  color: white;
+  border-color: #DF5A5F;
+  border-radius: 5px;
+  width: 100%;
+  &-wrapper {
+    padding: 10px;
+  }
+  &:hover {
+    background-color: #454eef;
+    color: #EFF2F7;
+    border-color: #DF5A5F;
+  }
+}
+
+.form-show-date {
+  background-color: white;
+  border-radius: 150px;
+  width: 100%;
+  &-wrapper {
+    padding: 10px;
+    background-color: white;
+  }
+}
+
+.label-show {
+  font-weight: normal;
+  font-style: italic;
+  margin: 0px;
+  word-wrap: break-word ;
+  font-family: Circular,Roboto,Helvetica Neue,sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #ABABAB;
+}
