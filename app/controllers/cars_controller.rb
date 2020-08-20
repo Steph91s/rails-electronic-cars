@@ -2,9 +2,18 @@ class CarsController < ApplicationController
     before_action :set_car, only: [ :show ]
 
     def index
+        # if params[:query].present?
+        #     sql_query = " \
+        #     cars.brand @@ :query \
+        #     OR cars.model @@ :query \
+        #     OR cars.location @@ :query \
+        #     "
+        #     @cars = policy_scope(Car).order(created_at: :desc).where(sql_query, query: "%#{params[:query]}%")
+        # else
+        #     @cars = Car.all# returns flats with coordinates
+        # end
         @cars = Car.geocoded
-        @cars = policy_scope(Car).order(created_at: :desc)# returns flats with coordinates
-
+        @cars = policy_scope(Car).order(created_at: :desc)
         @markers = @cars.map do |car|
         {
             lat: car.latitude,
@@ -16,6 +25,7 @@ class CarsController < ApplicationController
     end
 
     def show
+        @car = Car.find(params[:id])
         @booking = Booking.new
     end
 

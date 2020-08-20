@@ -1,12 +1,9 @@
 <%= form_tag cars_path, method: :get, class: 'form-inline' do %>
-
-  <%= text_field_tag 'cars[location]', nil, class: "form-control text-center", id: 'car_location', placeholder: "Choose a city", autofocus: true %>
-
-  <%= date_field 'cars[check_in_date]', nil, class: "form-control datepicker text-center date-input", placeholder: "Starting Line" %>
-
-  <%= date_field 'cars[check_out_date]', nil, class: "form-control datepicker text-center date-input", placeholder: "Finish Line" %>
-
-  <%= select_tag 'cars[number_of_guest]', options_for_select([['1'], ['2'], ['3'], ['4']]), class: "form-control text-center unselected", id: 'guest', prompt: "Guests" %>
-
+  <div class="algolia">
+    <input type="search" id="car-location" placeholder="Where are we going?" name="cars[location]" />
+  </div>
   <%= submit_tag "Search", class: "btn btn-info search" %>
 <% end %>
+
+
+

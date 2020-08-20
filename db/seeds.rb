@@ -21,7 +21,7 @@ fiona = User.create(email: 'fiona@ecars.com', password: '123456')
 
 [steffen, aron, nino, fiona].each { |member| users << member }
 
-locations = ["Unter den Linden 7, 10117 Berlin", "Spreeweg 1, 10557 Berlin", "Panoramastraße 1A, 10178 Berlin", "Pariser Platz 3, 10117 Berlin", "Platz der Republik 1, 11011 Berlin", "Platz der Luftbrücke 5, 12101 Berlin", "Am Lustgarten, 10178 Berlin", "Bodestraße 1-3, 10178 Berlin", "Bernauer Straße 111, 13355 Berlin", "Unter den Linden 2, 10117 Berlin", "Friedrichstraße 43-45, 10969 Berlin", "Spandauer Damm 10, 14059 Berlin", "Lindenstraße 9-14, 10969 Berlin", "Trebbiner Straße 9, 10963 Berlin", "Cora-Berliner-Straße 1, 10117 Berlin", "Turmstr. 18, 10559 Berlin", "Niederkirchnerstraße 8, 10963 Berlin", "Hardenbergplatz 8, 10787 Berlin", "Königin-Luise-Strasse 6-8, 14195 Berlin", "Karl-Liebknecht-Str. 1, 10178 Berlin"]
+locations = ["1600 Pennsylvania Avenue NW, Washington, DC 20500", "Windsor SL4 1NJ, United Kingdom", "Panoramastraße 1A, 10178 Berlin", "Pariser Platz 3, 10117 Berlin", "Platz der Republik 1, 11011 Berlin", "Platz der Luftbrücke 5, 12101 Berlin", "Am Lustgarten, 10178 Berlin", "Bodestraße 1-3, 10178 Berlin", "Bernauer Straße 111, 13355 Berlin", "Jl. Petitenget No. 507, Kerobokan Kelod, Kec. Kuta Utara, Kabupaten Badung, Bali", "Friedrichstraße 43-45, 10969 Berlin", "Lassallestraße 40, 1020 Wien", "Van Ostadestraat 1, 1072 SL Amsterdam", "Rue d'Ulm 45, 75005 Paris", "Carrer de la Llacuna 128, 08018 Barcelona", "Turmstr. 18, 10559 Berlin", "Niederkirchnerstraße 8, 10963 Berlin", "Hardenbergplatz 8, 10787 Berlin", "Königin-Luise-Strasse 6-8, 14195 Berlin", "Karl-Liebknecht-Str. 1, 10178 Berlin"]
 
 cars = [
   {
