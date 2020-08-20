@@ -58,10 +58,11 @@ text-align: center;
 
 
 .tabs {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
+
 .tab {
   font-size: 18px;
   font-weight: bold;
@@ -71,6 +72,7 @@ text-align: center;
   text-decoration: none;
   color: black;
 }
+
 .tab:hover {
   opacity: 1;
   text-decoration: none;
