@@ -37,7 +37,9 @@
       <div class="results-cards">
         <% @cars.each do |car| %>
           <div class="card">
-            <%= image_tag car.photo, crop: :cover %>
+            <% if car.photo.attached? %>
+              <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
             <h2><%= car.brand %></h2>
             <div class="results-detail">
               <div>

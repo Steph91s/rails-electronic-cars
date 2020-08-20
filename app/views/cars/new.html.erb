@@ -6,21 +6,17 @@
                     <div class="formular">
                         <h1 class="text-center">Offer your e-car</h1>
 
-                        <% if policy(Car).create? %>
-                            <%= link_to "New car", new_car_path %>
-                        <% end %>
-
                         <%= simple_form_for @car, :html => { class: 'form-checkbox-inline' } do |f| %>
                             <%= f.input :brand %>
                             <%= f.input :model %>
                             <%= f.input :description %>
-                            <%= f.input :location %>
+                            <%= f.input :location, label: "Full Address" %>
                             <%= f.input :category,
                                 class: "inline",
                                 as: :check_boxes,
                                 collection: ["Compact Car", "Family Car", "Sports Car", "All-round"]
                             %>
-                            <%= f.input :price_per_day, :label => "Price Per Day (€)" %>
+                            <%= f.input :price_per_day, label: "Price Per Day (€)" %>
                             <%= f.input :number_of_seat, collection: [ 1 ,2 ,3, 4 ] %>
                             <%= f.input :photo, as: :file %>
                             <%= f.button :submit, "Create new car", class: "btn btn-success form-control" %>
