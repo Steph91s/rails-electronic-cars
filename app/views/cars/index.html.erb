@@ -37,8 +37,9 @@
       <div class="results-cards">
         <% @cars.each do |car| %>
           <div class="card">
-            <%= image_tag car.photo, crop: :cover %>
-            <%= link_to "Show details >>", car, class: "show-details"%>
+            <% if car.photo.attached? %>
+              <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
             <h2><%= car.brand %></h2>
             <div class="results-detail">
               <div>
@@ -47,7 +48,7 @@
               <div><p><span class="light-words"></span><%= car.price_per_day %>€/day</p></div>
             </div>
           </div>
-        <% end %>         
+        <% end %>
       </div>
     </div>
     <div id="map"

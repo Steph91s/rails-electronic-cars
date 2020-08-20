@@ -25,7 +25,7 @@ locations = ["1600 Pennsylvania Avenue NW, Washington, DC 20500", "Windsor SL4 1
 
 cars = [
   {
-    photo: "https://www.autozeitung.de/assets/styles/article_image/public/field/image/bmw-i8-facelift-2018-7.jpg?itok=B5nFDOm4", brand: "BMW", model: "i8", description: "Sports car built to thrill", price_per_day: 60, number_of_seat: 2, category: "sports car"
+    photo: "https://images.unsplash.com/flagged/photo-1579840947450-eb22b16fa71b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1356&q=80", brand: "BMW", model: "i8", description: "Sports car built to thrill", price_per_day: 60, number_of_seat: 2, category: "sports car"
   },
   {
     photo: "https://efahrer-images.chip.de/_cgep8FUl-bcRKreHUj941yWm44=/640x400/center/middle/efahrer.chip.de/files/egolf.jpg", brand: "VW", model: "eGolf", description: "Beloved classic, now as an electric", price_per_day: 20, number_of_seat: 4, category: "compact city"
@@ -37,7 +37,7 @@ cars = [
     photo: "https://teslamag.de/wp-content/uploads/2019/06/Tesla-Model-3-Performance-Test-1200x689.jpg", brand: "Tesla", model: "3", description: "The city car from the USA", price_per_day: 25, number_of_seat: 4, category: "compact city"
   },
   {
-    photo: "https://tesla-cdn.thron.com/delivery/public/image/tesla/35d15221-0a5f-4dce-b484-a4db67b81dd2/bvlatuR/std/0x0/model-s@2x", brand: "Tesla", model: "S", description: "The all-round electric champion", price_per_day: 60, number_of_seat: 4, category: "all-rounder"
+    photo: "https://images.unsplash.com/photo-1536700503339-1e4b06520771?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", brand: "Tesla", model: "S", description: "The all-round electric champion", price_per_day: 60, number_of_seat: 4, category: "all-rounder"
   },
     {
     photo: "https://electriccarhome.co.uk/wp-content/uploads/2020/03/tesla-model-x.jpg", brand: "Tesla", model: "X", description: "The sporty family car, with doors that will make your jaw drop", price_per_day: 65, number_of_seat: 4, category: "family car"
