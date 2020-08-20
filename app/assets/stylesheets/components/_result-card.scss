@@ -18,7 +18,7 @@
 }
 
 .card > img {
-  height: 250px;
+  height: 200px;
   width: 100%;
   object-fit: cover;
 }
@@ -74,4 +74,18 @@
 .light-words {
   font-weight: lighter;
   color: rgba(100, 100, 100, 0.8);
+}
+
+.show-details {
+  position: relative;
+  top: -200px;
+  left: 90px;
+  font-size: 0.6em;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+}
+
+.show-details:hover {
+  color: red;
+  text-decoration: none;
 }
