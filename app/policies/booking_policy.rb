@@ -8,4 +8,8 @@ class BookingPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def validate?
+    record.car.user == user
+  end
 end
