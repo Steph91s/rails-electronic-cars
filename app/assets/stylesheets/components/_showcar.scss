@@ -1,5 +1,5 @@
 .banner {
-  height: 700px;
+  height: 100vh;
   justify-content: space-evenly;
   background-position: center;
 }
@@ -72,9 +72,7 @@
   right: 20px;
 }
 
-#back-btn {
-  position: absolute;
-  bottom: -700px;
-  left: 130px;
+.buttOn {
+  margin-left: 670px !important;
 }
 
