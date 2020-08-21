@@ -45,11 +45,7 @@
       <%= f.input :number_of_guest, collection: 1..4, label: "Guests" %>
       <%= f.submit %>
     <% end %>
-
   </div>
-
-  <div id='back-btn'>
-    <%= link_to 'Back to cars', cars_path, class: "btn btn-success" %>
-  </div>
-
 </div>
+
+<%= link_to 'Back to cars', cars_path, class: "btn btn-success buttOn" %>
