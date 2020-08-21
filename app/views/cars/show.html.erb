@@ -6,22 +6,24 @@
 
   <div class="car-details">
 
-    <h1>Car Details:</h1>
-    <br>
-
-    <h3 class = "border"> Brand: <%= @car.brand %></h3>
-    <h3 class = "border"> Model: <%= @car.model %></h3>
-
-    <h3 class = "border">Description:</h3>
-    <%= @car.description %>
-
-    <h3 class = "border">Category:</h3>
-    <%= @car.category %>
-
-    <h3 class = "border">Number of Seats: <%= @car.number_of_seat %></h3>
-
-    <h3 class = "border">Price per day: €<%= @car.price_per_day %></h3>
-
+    <div id='car-brand'>
+      <h2><i class="fas fa-car"></i>  <%= @car.brand %> <%= @car.model %> </h2>
+    </div>
+    <div id='car-descrip'>
+      <%= @car.description %>
+    </div>
+    <div id='car-categ'>
+      <h5><%= @car.category %></h5>
+    </div>
+    <div id="car-location">
+      <h5><i class="fas fa-map-marker-alt"></i> <%= @car.location %> </h5>
+    </div>
+    <div id='car-seats'>
+      <h4><i class="fas fa-chair"></i>  <%= @car.number_of_seat %> seats</h4>
+    </div>
+    <div id='car-price'>
+      <h4><i class="fas fa-euro-sign"></i>  <%= @car.price_per_day %>/per day</h4>
+    </div>
 
   </div>
 
@@ -40,9 +42,14 @@
     <%= simple_form_for [@car, @booking] do |f| %>
       <%= f.input :check_in_date, as: :date, label: "Starting Date" %>
       <%= f.input :check_out_date, as: :date, label: "Finishing Date" %>
-      <%= f.input :number_of_guest, collection: 1..4, label: "Guest" %>
+      <%= f.input :number_of_guest, collection: 1..4, label: "Guests" %>
       <%= f.submit %>
     <% end %>
 
   </div>
+
+  <div id='back-btn'>
+    <%= link_to 'Back to cars', cars_path, class: "btn btn-success" %>
+  </div>
+
 </div>
