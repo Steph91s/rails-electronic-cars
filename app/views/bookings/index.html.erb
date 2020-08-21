@@ -1,100 +1,94 @@
 <div class="container">
-    <div class="dash-title">
+    <div class="dash-title text-center">
         <h2><%= @current_user.email.split("@")[0].capitalize %>'s Dashboard</h2>
     </div>
 
-    <div class="invite">
-        <div class="invite-content">
-          <i class="fa fa-eur" aria-hidden="true"></i>
-        <p><strong>50€</strong> credit for your next trip!</p>
-        <p>Share with your friends the Treehouse code: <strong>TH<%= @current_user.email.split("@")[0].capitalize %><%= @current_user.id %></strong></p>
-        <%= link_to ' Share on <i class="fab fa-facebook" aria-hidden="true"></i>'.html_safe, 'https://www.facebook.com/', class: "btn btn-success", target:"_blank" %>
-        </div>
+    <div class="head-con">  
+      <div class="tabs">
+          <a href="#" class="guest tab tab-guest active">My trips</a>
+          <a href="#" class="host tab tab-host">My rentings</a>
+      </div>
+      <%= link_to "Need another car?", cars_path, class: "btn btn-success" %>
     </div>
 
-    <div class="tabs">
-        <a href="#" class="guest tab tab-guest active">My trips</a>
-        <a href="#" class="host tab tab-host">My rentings</a>
-    </div>
-
-    <div class="row">
-        <div class="inbox-guest" id="guest">
-          <ul class="inbox">
-            <% @bookings.each do |booking| %>
-                <li class="message">
-                  <!-- Code your message here -->
-                  <div class="message_name">
-                    <h2><strong><%= booking.car.user.email.split("@")[0].capitalize %></strong></h2>
-                    <h2><%= booking.car.location %></h2>
-                  </div>
-                  <div class="dates">
-                    <h4>Check-In - Check-Out</h4>
-                    <p><%= booking.check_in_date %>   -   <%= booking.check_out_date %></p>
-                  </div>
-                  <div class="guests">
-                    <h4>Guests number</h4>
-                    <p><center><%= booking.number_of_guest %></center></p>
-                  </div>
-                  <div class="message_status text_greylight">
-                    <h4 class="status text_greylight">
-                      <% if booking.confirmed %>
-                      <div class="accepted"><%= "Accepted" %></div>
-                      <% else %>
-                      <div class="declined"><%= "Pending" %></div>
-                      <% end %>
-                    </h4>
-                    <h4 class="price"><%= booking.total_price %>€</h4>
-                  </div>
-                </li>
+    <div class="row inbox text-center" id="trip">
+      <% @bookings.each do |booking| %>
+        <div class="message">
+        <!-- Code your message here -->
+          <div class="message_name">
+            <h6 class="border-bottom">Pickup Address:</h6>
+            <p><%= booking.car.location %></p>
+          </div>
+          <div class="dates">
+            <h6 class="border-bottom">Date:</h6>
+            <p><%= booking.check_in_date.strftime('%Y-%m-%d') %> ~ <%= booking.check_out_date.strftime('%Y-%m-%d') %></p>
+          </div>
+          <div class="guests">
+            <h6 class="border-bottom">Guest:</h6>
+            <p><%= booking.number_of_guest %></p>
+          </div>
+          <div class="total">
+            <h6 class="border-bottom">Total:</h6>
+            <p class="price"><%= booking.total_price %>€</p>
+          </div>
+          <div class="message_status text_greylight status">
+            <% if booking.confirmed %>
+              <h3 class="accepted text-success"><%= "Accepted" %></h3>
+            <% else %>
+              <h3 class="declined text-danger"><%= "Pending" %></h3>
             <% end %>
-          </ul>
+          </div>
         </div>
+      <% end %>       
     </div>
 
-    <div class="row">
-        <div class="inbox-host" id="host">
-          <ul class="inbox">
-            <% my_hostings = Booking.hostings(current_user) %>
-            <% my_hostings.each do |booking| %>
-            <li class="message">
+    <div class="row inbox-host inbox" id="host">
+      <% my_hostings = Booking.hostings(current_user) %>
+      <% my_hostings.each do |booking| %>
+      <div class="message text-center">
               <!-- <img src="https://kitt.lewagon.com/placeholder/users/lionel-k" class="avatar_sm"> -->
-              <div class="message_name">
-                <h2></h2>
-                <h2><strong><%= booking.user.email.split("@")[0].capitalize %></strong></h2>
-              </div>
-
-              <div class="dates">
-                <h4>Check-In - Check-Out</h4>
-                <p><%= booking.check_in_date %>   -   <%= booking.check_out_date %></p>
-              </div>
-
-              <div class="guests">
-                <h4>Guests number</h4>
-                <p><center><%= booking.number_of_guest %></center></p>
-              </div>
-
-              <div class="message_status text_greylight">
-                <h4 class="status text_greylight">
-                  <% if booking.confirmed %>
-                  <div class="accepted"><%= "Accepted" %></div>
-                  <% else %>
-                  <div class="declined"><%= "Pending" %></div>
-                  <% end %>
-                </h4>
-
-                <h4 class="price"><%= booking.total_price %>€</h4>
-              </div>
-
-              <div class="message_body">
-                <%= link_to "Accept!", validate_booking_path(booking, status: 'accepted'), class: "btn greenbtn btn-success" %>
-                <p></p>
-                <%= link_to "Decline", validate_booking_path(booking, status: 'declined'), class: "btn btn-danger" %>
-              </div>
-
-            </li>
-            <% end %>
-          </ul>
+        <div class="message_name">
+          <h5 class="border-bottom">Name:</h5>
+          <h3 ><%= booking.user.email.split("@")[0].capitalize %></h3>
         </div>
+
+        <div class="dates">
+          <h5 class="border-bottom">Date:</h5>
+          <p><%= booking.check_in_date.strftime('%Y-%m-%d') %>   -   <%= booking.check_out_date.strftime('%Y-%m-%d') %></p>
+        </div>
+
+        <div class="guests">
+          <h5 class="border-bottom">Guest:</h5>
+          <p><%= booking.number_of_guest %></p>
+        </div>
+
+        <div>
+          <h5 class="border-bottom">Total:</h5>
+          <p class="price"><%= booking.total_price %>€</p>
+        </div>
+
+        <div class="message_status text_greylight status">
+          <% if booking.confirmed %>
+            <h3 class="accepted"><%= "Accepted" %></h3>
+          <% else %>
+            <h3 class="declined"><%= "Pending" %></h3>
+           <% end %>
+          </div>
+
+          <div class="message_body">
+            <%= link_to "Accept!", validate_booking_path(booking, status: 'accepted'), class: "btn greenbtn btn-success" %>
+            <p></p>
+            <%= link_to "Decline", validate_booking_path(booking, status: 'declined'), class: "btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    
+    <div class="invite-content">
+      <p><strong>50€</strong> credit for your next trip!</p>
+      <p>Share with your friends the Treehouse code: <strong>TH<%= @current_user.email.split("@")[0].capitalize %><%= @current_user.id %></strong></p>
+      <%= link_to ' Share on <i class="fab fa-facebook" aria-hidden="true"></i>'.html_safe, 'https://www.facebook.com/', class: "btn btn-success", target:"_blank" %>
     </div>
 
 </div>

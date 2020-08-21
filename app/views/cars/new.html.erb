@@ -12,8 +12,6 @@
                             <%= f.input :description %>
                             <%= f.input :location, label: "Full Address" %>
                             <%= f.input :category,
-                                class: "inline",
-                                as: :check_boxes,
                                 collection: ["Compact Car", "Family Car", "Sports Car", "All-round"]
                             %>
                             <%= f.input :price_per_day, label: "Price Per Day (€)" %>

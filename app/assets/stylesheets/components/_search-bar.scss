@@ -30,7 +30,17 @@
   margin-left: 5px;
 }
 
+.container-search {
+  display:  flex;
+}
+
+.ap-input-icon {
+  display: none !important;
+}
+
 .algolia {
+  flex: auto 1;
   color: black;
   text-align: left;
+  width: 800px;
 }

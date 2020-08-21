@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index] do
+    member do
+      get "validate", to: "bookings#validate"
+    end
+  end
 end
