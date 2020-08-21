@@ -11,4 +11,12 @@ class Car < ApplicationRecord
   validates :number_of_seat, presence: true, inclusion: { in: [1, 2, 3, 4] }
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  # ----------------------------------SEARCH ENGINE-------------------------------------------
+  include PgSearch::Model
+  pg_search_scope :search_by_location_and_brand,
+    against: [ :location, :brand, :category],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

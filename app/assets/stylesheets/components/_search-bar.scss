@@ -32,14 +32,10 @@
 
 .container-search {
   display:  flex;
-}
-
-.ap-input-icon {
-  display: none !important;
+  margin-top: 50px;
 }
 
 .algolia {
-  flex: auto 1;
   color: black;
   text-align: left;
   width: 800px;

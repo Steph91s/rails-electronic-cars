@@ -1,8 +1,10 @@
-<%= simple_form_for cars_path do %>
+<%= form_tag cars_path, method: :get do %>
   <div class="container-search algolia">
-    <input type="search" id="car-location" placeholder="Where are we going?" name="cars[location]" />
-    <%= submit_tag "Search", class: "btn btn-info search" %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Type in your favorite E-Car"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   </div>
 <% end %>
-
-
