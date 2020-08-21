@@ -6,27 +6,16 @@
 
 .main-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 15px;
   padding: 15px;
-}
-
-.border {
-  border: 0 0 2px 0 black !important;
-  box-shadow: 1px 1px 1px grey;
-}
-
-.car-details {
-  text-align: left;
-  width: 600px;
-  padding: 40px;
 }
 
 .booking-request {
   text-align: center;
   justify-content: center;
   height: 450px;
-  padding: 40px;
+  padding: 30px;
   margin: 30px;
   background-color: white;
   border-color: black;
@@ -34,42 +23,58 @@
   box-shadow: 5px 5px 15px #888888;
 }
 
-
-.form-show-button {
-  color: white;
-  border-color: #DF5A5F;
-  border-radius: 5px;
-  width: 100%;
-  &-wrapper {
-    padding: 10px;
-  }
-  &:hover {
-    background-color: #454eef;
-    color: #EFF2F7;
-    border-color: #DF5A5F;
-  }
-}
-
-.form-show-date {
+.car-details {
+  display: flex;
+  position: relative;
+  width: 400px;
+  padding: 30px;
+  margin: 30px;
   background-color: white;
-  border-radius: 150px;
-  width: 100%;
-  &-wrapper {
-    padding: 10px;
-    background-color: white;
-  }
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888;
 }
 
-.label-show {
-  font-weight: normal;
-  font-style: italic;
-  margin: 0px;
-  word-wrap: break-word ;
-  font-family: Circular,Roboto,Helvetica Neue,sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #ABABAB;
+#car-brand {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
+
+#car-descrip {
+  position: absolute;
+  top: 80px;
+  left: 15px;
+}
+
+#car-categ {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  font-style: italic;
+}
+
+#car-location {
+  position: absolute;
+  bottom: 110px;
+  left: 20px;
+}
+
+#car-seats {
+  position: absolute;
+  bottom: 45px;
+  left: 20px;
+}
+
+#car-price {
+  position: absolute;
+  bottom: 45px;
+  right: 20px;
+}
+
+#back-btn {
+  position: absolute;
+  bottom: -700px;
+  left: 130px;
+}
+

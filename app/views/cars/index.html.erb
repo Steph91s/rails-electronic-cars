@@ -1,61 +1,41 @@
-<div class="results-wrapper">
+<div class="results-wrapper main-results-container">
+  <div class="results-container text-center">
+    <h3>Choose among amazing electric cars</h3>
 
+    <%= form_tag cars_path, method: :get do %>
+      <div class="container-search algolia">
+        <%= text_field_tag :brand,
+        params[:brand],
+        class: "form-control",
+        placeholder: "Type in your favorite E-Car" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+    <% end %>
 
-  <div class="main-results-container">
-    <div class="results-container text-center">
+    <p class="text-left"><%= @cars.length < 2 ? "#{ @cars.length } result" : "#{ @cars.length } results" %></p>
 
-      <h3>Choose among amazing electric cars</h3>
-      <div class="filters-bar text-center">
-        <%#= render "shared/form_index" %>
-        <div class="categories-container">
-          <div class="category-item tag compact">
-            <%= image_tag "compact.png", class: "img-icon" %>
-            <h5>Compact</h5>
-          </div>
-          <div class="seperate">
-          </div>
-          <div class="category-item tag family">
-            <%= image_tag "family.png", class: "img-icon" %>
-            <h5>Family</h5>
-          </div>
-          <div class="seperate">
-          </div>
-          <div class="category-item tag sport">
-            <%= image_tag "speed.png", class: "img-icon" %>
-            <h5>Sports</h5>
-          </div>
-          <div class="seperate">
-          </div>
-          <div class="category-item tag all-rounder">
-            <%= image_tag "all.png", class: "img-icon" %>
-            <h5>All-rounder</h5>
+    <div class="results-cards">
+      <% @cars.each do |car| %>
+        <div class="card">
+          <% if car.photo.attached? %>
+            <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <%= link_to "Show details >>", car, class: "show-details"%>
+          <h2><%= car.brand %></h2>
+          <div class="results-detail">
+            <div>
+              <p><%= car.model %></p>
+            </div>
+            <div><p><span class="light-words"></span><%= car.price_per_day %>€/day</p></div>
           </div>
         </div>
-      </div>
-      <p class="text-left"><%= @cars.length < 2 ? "#{ @cars.length } result" : "#{ @cars.length } results" %></p>
+      <% end %>
+    </div>
+  </div>
 
-      <div class="results-cards">
-        <% @cars.each do |car| %>
-          <div class="card">
-            <% if car.photo.attached? %>
-              <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <%= link_to "Show details >>", car, class: "show-details"%>
-            <h2><%= car.brand %></h2>
-            <div class="results-detail">
-              <div>
-                <p><%= car.model %></p>
-              </div>
-              <div><p><span class="light-words"></span><%= car.price_per_day %>€/day</p></div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div id="map"
-     style="width: 475px; height: 100vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+  <div id="map"
+    style="width: 475px; height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
