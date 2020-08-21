@@ -4,11 +4,17 @@
 
     <%= form_tag cars_path, method: :get do %>
       <div class="container-search algolia">
-        <%= text_field_tag :brand,
-        params[:brand],
-        class: "form-control",
-        placeholder: "Type in your favorite E-Car" %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Type in your favorite E-Car"
+      %>
+      <%= text_field_tag :location,
+      params[:location],
+      class: "form-control",
+      placeholder: "Where do we want to go now?" 
+      %>
+      <%= submit_tag "Search", class: "btn btn-warning" %>
       </div>
     <% end %>
 
