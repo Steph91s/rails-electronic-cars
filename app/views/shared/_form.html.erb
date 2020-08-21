@@ -1,9 +1,8 @@
-<%= form_tag cars_path, method: :get, class: 'form-inline' do %>
-  <div class="algolia">
+<%= simple_form_for cars_path do %>
+  <div class="container-search algolia">
     <input type="search" id="car-location" placeholder="Where are we going?" name="cars[location]" />
+    <%= submit_tag "Search", class: "btn btn-info search" %>
   </div>
-  <%= submit_tag "Search", class: "btn btn-info search" %>
 <% end %>
-
 
 

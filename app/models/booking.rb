@@ -14,9 +14,8 @@ class Booking < ApplicationRecord
     return hostings
   end
 
-  private
   def total_price
-    diff_days = Date.parse(self.check_out_date).mjd - Date.parse(self.check_in_date).mjd
-    self.car.price_per_day * diff_days
+    diff_days = (self.check_out_date - self.check_in_date).to_i
+    (self.car.price_per_day * diff_days) / 10000
   end
 end
