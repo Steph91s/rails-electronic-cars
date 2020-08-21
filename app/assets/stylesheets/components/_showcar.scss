@@ -7,8 +7,8 @@
 .main-container {
   display: flex;
   justify-content: space-around;
-  margin: 15px;
-  padding: 15px;
+  margin: 30px;
+  padding: 0;
 }
 
 .booking-request {
@@ -16,7 +16,7 @@
   justify-content: center;
   height: 450px;
   padding: 30px;
-  margin: 30px;
+  margin: 0;
   background-color: white;
   border-color: black;
   border-radius: 10px;
@@ -26,9 +26,9 @@
 .car-details {
   display: flex;
   position: relative;
-  width: 400px;
+  width: 48%;
   padding: 30px;
-  margin: 30px;
+  margin: 0;
   background-color: white;
   border-color: black;
   border-radius: 10px;
@@ -72,7 +72,6 @@
   right: 20px;
 }
 
-.buttOn {
-  margin-left: 670px !important;
+.back-btn {
+  text-align: center;
 }
-
