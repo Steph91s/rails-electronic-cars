@@ -12,9 +12,8 @@
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   font-size: 22px;
-  color: white;
+  color: rgb(150, 150, 150);
   font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 .card > img {
@@ -81,11 +80,10 @@
   top: -200px;
   left: 90px;
   font-size: 0.6em;
-  text-shadow: 2px 2px 2px black;
-  color: white;
+  color: #F4F4F4;
 }
 
 .show-details:hover {
-  color: red;
+  color: #EE5F5B;
   text-decoration: none;
 }
